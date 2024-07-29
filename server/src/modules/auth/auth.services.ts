@@ -23,7 +23,7 @@ class Services extends PrismaConnect {
     if (user) {
       await password.verify(payload.password, user.password);
 
-      const authToken = token.generate({ id: user.id, email: user.email });
+      const authToken = token.generate({ id: user.id, email: user.email, role: user.role });
       return { token: authToken };
     } else {
       throw new APIError(httpStatus.BAD_REQUEST, 'WrongCredentials');

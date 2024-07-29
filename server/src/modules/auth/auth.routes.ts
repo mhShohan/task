@@ -8,6 +8,6 @@ const authRoutes = Router();
 
 authRoutes.post('/login', validateRequest(authValidator.login), authControllers.login)
 authRoutes.post('/register', validateRequest(authValidator.register), authControllers.register)
-authRoutes.get('/self', verifyAuth, authControllers.register)
+authRoutes.get('/self', verifyAuth, authControllers.self)
 
 export default authRoutes;

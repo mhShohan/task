@@ -16,7 +16,7 @@ const verifyAuth: RequestHandler = (req, _res, next) => {
         const decode = jwt.verify(token, config.JWT_ACCESS_SECRET as string) as IJwtPayload;
 
         req.user = {
-          _id: decode?._id,
+          id: decode?.id,
           email: decode?.email,
           role: decode?.role,
         };
